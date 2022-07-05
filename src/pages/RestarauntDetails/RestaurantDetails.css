@@ -1,0 +1,81 @@
+.ProductDetails-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    border-radius: 10px;
+    /*margin: 70px auto;*/
+    background-color: #FFF;
+    -webkit-box-shadow: 10px 10px 93px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 93px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 93px 0 rgba(0, 0, 0, 0.75);
+}
+
+.thumbnail {
+    height: 100%;
+    width: 530px;
+    border-radius: 10px;
+}
+
+img.left {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+h1 {
+    padding-top: 15px;
+    font-size: 1.3rem;
+    color: #4B4B4B;
+}
+
+
+.separator {
+    margin-top: 10px;
+    border: 1px solid #C3C3C3;
+}
+
+
+h5 {
+    font-size: 4rem;
+    color: #C3C3C3;
+}
+
+.rate-section {
+    display: flex;
+    flex-direction: column;
+    left: 30px;
+    bottom: 20px;
+}
+
+.address-section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.restaurant-address {
+    font-weight: bold;
+}
+
+
+li {
+    color: #7B7B7B;
+}
+
+.info {
+    padding: 0 10px;
+}
+
+.feedback-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

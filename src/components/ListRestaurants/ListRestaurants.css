@@ -1,0 +1,9 @@
+.ListRestaurants-container {
+    display: flex;
+}
+
+.ListRestaurants-section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}

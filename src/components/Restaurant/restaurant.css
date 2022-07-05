@@ -1,0 +1,123 @@
+.my-card {
+    position: relative;
+    width: 320px;
+    height: 310px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom:20px;
+}
+
+.my-card .offer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    background-color: red;
+    position: absolute;
+    top: 28px;
+    left: -14px;
+    border-radius: 20px 20px 20px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff
+}
+
+.my-card span:before {
+    position: absolute;
+    content: '';
+    background-color: red;
+    height: 30px;
+    width: 17px;
+    top: 20px;
+    left: 0;
+    border-radius: 10px;
+    z-index: -10
+}
+
+.my-card span:after {
+    position: absolute;
+    content: '';
+    background-color: #d70303;
+    height: 30px;
+    width: 17px;
+    top: 30px;
+    left: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 20px;
+    z-index: -10
+}
+
+.my-card .item-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.my-card .item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.item-content {
+    padding: 10px
+}
+
+.item-content h3 {
+    font-size: 20px
+}
+
+.item-content p {
+    font-size: 15px;
+    font-weight: 500
+}
+
+.item-price {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between
+}
+
+.item-rate{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.item-star{
+    margin-right: 10px;
+}
+
+.item-button-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-button {
+    background-color: #c2fbd7;
+    border-radius: 100px;
+    width: 100px;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.item-button:hover {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+}
