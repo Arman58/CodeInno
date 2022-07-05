@@ -15,15 +15,11 @@ export const MapProvider = ({children}) => {
         getRestaurant(id).then(r => setLocation(r))
     }
 
-    const dd = (id, body) => {
-        sendFeedback(id, body)
-    }
 
 
     const value = {
         location,
         changeLocation,
-        dd
     }
 
     return <MapContext.Provider value={value}>{children}</MapContext.Provider>
