@@ -1,9 +1,9 @@
-import {useContext, useState} from "react";
+import {useState} from "react";
 import {FaStar} from "react-icons/fa";
 import {useParams} from "react-router-dom";
 
 import styles from './Rate.module.css';
-import {MapContext} from "../../context/MapContext";
+import {sendFeedback} from "../../service/restaurants";
 
 const colors = {
     orange: "#FFBA5A",
@@ -14,9 +14,7 @@ const colors = {
 
 const Rate = () => {
     const [currentValue, setCurrentValue] = useState(0);
-    const [feedback, setFeedback] = useState({});
     const [message, setMessage] = useState('');
-    const {dd} = useContext(MapContext)
 
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
@@ -37,7 +35,7 @@ const Rate = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dd(id, {message, rate: currentValue}).then(r => setFeedback(r))
+        sendFeedback(id, {message, rate: currentValue})
         setMessage('')
         setCurrentValue(0)
     }
