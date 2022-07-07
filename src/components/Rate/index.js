@@ -1,8 +1,9 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {FaStar} from "react-icons/fa";
 import {useParams} from "react-router-dom";
 
 import './Rate.css';
+import {MapContext} from "../../context/MapContext";
 
 const colors = {
     orange: "#FFBA5A",
