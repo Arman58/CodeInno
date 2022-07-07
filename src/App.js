@@ -7,8 +7,6 @@ import {
 import RestaurantDetails from "./pages/RestarauntDetails";
 
 
-
-
 const App = () => {
     return (
         <>

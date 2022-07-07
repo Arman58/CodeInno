@@ -1,22 +1,24 @@
-import React, {useEffect, useState} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import {useParams} from "react-router-dom";
 import Rate from "../../components/Rate";
 import {FaStar} from "react-icons/fa";
 import {getRestaurant} from "../../service/restaurants";
 import FeedbackList from "../../components/FeedbackList";
+import {MapContext} from "../../context/MapContext";
 
 import "./RestaurantDetails.css";
 
 const RestaurantDetails = () => {
     const {id} = useParams()
     const orange = '#FFBA5A'
+    const {feedback} = useContext(MapContext)
     const stars = Array(5).fill(0)
     const [productDetails, setProductDetails] = useState({})
 
 
     useEffect(() => {
         getRestaurant(id).then(res => setProductDetails(res))
-    }, [id])
+    }, [feedback])
 
     return (
         <div>

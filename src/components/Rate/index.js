@@ -2,8 +2,7 @@ import {useState} from "react";
 import {FaStar} from "react-icons/fa";
 import {useParams} from "react-router-dom";
 
-import styles from './Rate.module.css';
-import {sendFeedback} from "../../service/restaurants";
+import './Rate.css';
 
 const colors = {
     orange: "#FFBA5A",
@@ -13,17 +12,17 @@ const colors = {
 
 
 const Rate = () => {
-    const [currentValue, setCurrentValue] = useState(0);
     const [message, setMessage] = useState('');
-
+    const {submitting, currentValue, setCurrentValue, handleClick} = useContext(MapContext)
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
     const {id} = useParams()
 
 
-    const handleClick = value => {
-        setCurrentValue(value)
+    const setRate = value => {
+        handleClick(value)
     }
+
 
     const handleMouseOver = newHoverValue => {
         setHoverValue(newHoverValue)
@@ -35,7 +34,7 @@ const Rate = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        sendFeedback(id, {message, rate: currentValue})
+        submitting(id, {message, rate: currentValue})
         setMessage('')
         setCurrentValue(0)
     }
@@ -44,15 +43,15 @@ const Rate = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div className={styles.container}>
+                <div className="container">
                     <h2> Rate our restaurant </h2>
-                    <div className={styles.stars}>
+                    <div className="stars">
                         {stars.map((_, index) => {
                             return (
                                 <FaStar
                                     key={index}
                                     size={24}
-                                    onClick={() => handleClick(index + 1)}
+                                    onClick={() => setRate(index + 1)}
                                     onMouseOver={() => handleMouseOver(index + 1)}
                                     onMouseLeave={handleMouseLeave}
                                     color={(hoverValue || currentValue) > index ? colors.orange : colors.grey}
@@ -69,10 +68,10 @@ const Rate = () => {
                         onChange={e => setMessage((e.target.value))}
                         value={message}
                         placeholder="What's your experience?"
-                        className={styles.textarea}
+                        className="textarea"
                         required
                     />
-                    <button className={styles.submitButton} type="submit"> Leave feedback</button>
+                    <button className="submitButton" type="submit"> Leave feedback</button>
                 </div>
             </form>
         </div>
