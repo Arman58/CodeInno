@@ -10,7 +10,11 @@ import "./RestaurantDetails.css";
 
 const RestaurantDetails = () => {
     const {id} = useParams()
-    const orange = '#FFBA5A'
+    const colors = {
+        orange: "#FFBA5A",
+        grey: "#a9a9a9"
+
+    };
     const {feedback} = useContext(MapContext)
     const stars = Array(5).fill(0)
     const [productDetails, setProductDetails] = useState({})
@@ -51,7 +55,7 @@ const RestaurantDetails = () => {
                                         <FaStar
                                             key={index}
                                             size={24}
-                                            color={orange}
+                                            color={productDetails.rate > index ? colors.orange : colors.grey}
                                         />
                                     )
                                 })}
