@@ -27,7 +27,7 @@ const Restaurant = ({data}) => {
                                 return (
                                     <FaStar
                                         key={index}
-                                        size={24}
+                                        size={18}
                                         color={data.rate > index ? colors.orange : colors.grey}
                                         className="item-star"
                                     />
